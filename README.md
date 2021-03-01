@@ -51,3 +51,36 @@ Para possibilitar a equipe de front criar essa aplicação, queremos desenvolver
 -----
 
 ## Solução
+
+### Como usar
+
+Antes de rodar em qualquer ambiente é necessário copiar o arquivo `config.toml.example` e preencher os campos a seguir:
+
+Tags:
+* Database
+
+  ✩ server (Tipo do campo: Texto e Obrigatório)
+
+  ✩ database (Tipo do campo: Texto e Obrigatório)
+
+  ✩ collection (Tipo do campo: Texto e Obrigatório)
+
+  ✩ port (Tipo do campo: Inteiro e Obrigatório)
+
+  ✩ username (Tipo do campo: Texto)
+
+  ✩ password (Tipo do campo: Texto)
+  
+  ✩ timeout (Tipo do campo: Inteiro e Obrigatório)
+
+* Servers
+  Deve ser atualizada caso seja desejado mudar a porta da aplicação.
+
+* Swapi
+  Deve ser atualizada com a informação da API consumida para buscar a quantidade de planetas.
+
+Para clonar esse arquivo com facilidade você pode usar o seguinte comando:
+
+```shell script
+cp ./api/config/config.toml.example ./api/config/config.toml
+```

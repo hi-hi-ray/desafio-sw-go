@@ -178,3 +178,4 @@ func TestConfigNullExceptionFailSwapi(t *testing.T) {
 	assert.Panics(t, func() { config.ConfigNullException(needToFill()) })
 	assert.PanicsWithValue(t, expectedErrorMessage, func() { config.ConfigNullException(needToFill()) })
 }
+

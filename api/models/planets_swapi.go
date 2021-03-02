@@ -1,6 +1,13 @@
 package models
 
 type PlanetSwapi struct {
+	Count    int       `json:"count"`
+	Next     string    `json:"next"`
+	Previous string    `json:"previous"`
+	Results  []Results `json:"results"`
+}
+
+type Results struct {
 	Name           string   `json:"name"`
 	RotationPeriod string   `json:"rotation_period"`
 	OrbitalPeriod  string   `json:"orbital_period"`

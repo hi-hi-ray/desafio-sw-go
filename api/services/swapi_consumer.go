@@ -22,7 +22,7 @@ func (consumer SwapiConsumer) GetPlanets(planet string) (models.PlanetSwapi, err
 
 	response, err := http.Get(url)
 	if err != nil {
-		log.Println(fmt.Sprint(errors.SwapiConsumerError, err.Error()))
+		log.Println(fmt.Sprint("[SWAPI CONSUMER] ", errors.SwapiConsumerError, err.Error()))
 		return swPlanet, err
 	}
 
@@ -39,13 +39,18 @@ func (consumer SwapiConsumer) GetPlanets(planet string) (models.PlanetSwapi, err
 
 		err = json.Unmarshal(bodyBytes, &swPlanet)
 		if err != nil {
-			log.Println(fmt.Sprint(errors.MarshallBodyError, err.Error()))
+			log.Println(fmt.Sprint("[SWAPI CONSUMER] ", errors.MarshallBodyError, err.Error()))
 			return swPlanet, err
 		}
-		log.Println(fmt.Printf("[SWAPI CONSUMER] Success getting planet: %s", swPlanet.Results[0].Name))
+		if len(swPlanet.Results) == 0 {
+			log.Println(fmt.Sprint("[SWAPI CONSUMER] ", errors.SwapiNotFoundError))
+			return swPlanet, errors.Create(errors.SwapiNotFoundError)
+		}
+		log.Println(fmt.Printf("[SWAPI CONSUMER] Success getting planet: %s", planet))
 		return swPlanet, nil
 	}
 	if response.StatusCode == http.StatusNotFound {
+		log.Println(fmt.Sprint("[SWAPI CONSUMER] ", errors.SwapiNotFoundError))
 		return swPlanet, errors.Create(errors.SwapiNotFoundError)
 	}
 	return swPlanet, errors.Create(errors.SwapiInternalError)
@@ -55,14 +60,17 @@ func (consumer SwapiConsumer) GetAmountOfApparitions(planet string) (int, error)
 	swPlanet := models.PlanetSwapi{}
 	var err error
 	swPlanet, err = consumer.GetPlanets(planet)
-	if err != nil{
+	if err != nil {
 		return 0, err
 	}
+	log.Println(fmt.Printf("[SWAPI CONSUMER] Counting Appereances"))
 
-	quantityOfMovies := len(swPlanet.Results[0].FilmURLs)
-
-	if quantityOfMovies != 0 {
+	if len(swPlanet.Results) != 0 {
+		quantityOfMovies := len(swPlanet.Results[0].FilmURLs)
+		if quantityOfMovies != 0 {
+			return quantityOfMovies, nil
+		}
 		return quantityOfMovies, nil
 	}
-	return quantityOfMovies, nil
+	return 0, nil
 }

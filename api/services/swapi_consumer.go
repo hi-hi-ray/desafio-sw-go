@@ -65,8 +65,9 @@ func (consumer SwapiConsumer) GetAmountOfApparitions(planet string) (int, error)
 	}
 	log.Println(fmt.Printf("[SWAPI CONSUMER] Counting Appereances"))
 
-	if len(swPlanet.Results) != 0 {
+	if swPlanet.Results != nil {
 		quantityOfMovies := len(swPlanet.Results[0].FilmURLs)
+		log.Println(fmt.Printf("[SWAPI CONSUMER] Movies not empty"))
 		if quantityOfMovies != 0 {
 			return quantityOfMovies, nil
 		}

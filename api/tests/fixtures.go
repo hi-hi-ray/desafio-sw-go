@@ -1,6 +1,8 @@
 package integration
 
-import "github.com/hi-hi-ray/desafio-sw-go/api/models"
+import (
+	"github.com/hi-hi-ray/desafio-sw-go/api/models"
+)
 
 var residents = []string{
 	"http://swapi.dev/api/people/1/",

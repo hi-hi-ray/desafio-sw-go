@@ -29,7 +29,7 @@ func TestConfigValidatorFieldsSuccess(t *testing.T) {
 			Endpoint: "api/planets",
 		},
 	}
-	assert.Equal(t, len(configMock.ConfigValidatorFields()), 0)
+	assert.Equal(t, 0, len(configMock.ConfigValidatorFields()))
 }
 
 func TestConfigValidatorFieldsFailDatabase(t *testing.T) {
@@ -52,7 +52,7 @@ func TestConfigValidatorFieldsFailDatabase(t *testing.T) {
 			Endpoint: "api/planets",
 		},
 	}
-	assert.Equal(t, len(configMock.ConfigValidatorFields()), 5)
+	assert.Equal(t, 5, len(configMock.ConfigValidatorFields()))
 }
 
 func TestConfigValidatorFieldsFailServers(t *testing.T) {
@@ -75,7 +75,7 @@ func TestConfigValidatorFieldsFailServers(t *testing.T) {
 			Endpoint: "api/planets",
 		},
 	}
-	assert.Equal(t, len(configMock.ConfigValidatorFields()), 1)
+	assert.Equal(t, 1, len(configMock.ConfigValidatorFields()))
 }
 
 func TestConfigValidatorFieldsFailSwapi(t *testing.T) {
@@ -98,7 +98,7 @@ func TestConfigValidatorFieldsFailSwapi(t *testing.T) {
 			Endpoint: "",
 		},
 	}
-	assert.Equal(t, len(configMock.ConfigValidatorFields()), 2)
+	assert.Equal(t, 2, len(configMock.ConfigValidatorFields()))
 }
 
 func TestConfigNullExceptionFailDatabase(t *testing.T) {

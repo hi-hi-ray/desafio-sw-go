@@ -8,10 +8,10 @@ import (
 
 func TestCreateErrorsSuccess(t *testing.T)  {
 	 messageError := errors.Create("teste")
-	 assert.EqualValues(t, messageError.Error(), "teste")
+	 assert.EqualValues(t, "teste", messageError.Error())
 }
 
 func TestCreateErrorsEmpty(t *testing.T)  {
 	messageError := errors.Create("")
-	assert.EqualValues(t, messageError.Error(), "")
+	assert.EqualValues(t, "", messageError.Error())
 }

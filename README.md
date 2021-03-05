@@ -63,7 +63,7 @@ Será necessário baixar o repositório dentro do caminho `GOPATH/src/github.com
 
 ``` 
   cd $GOPATH/src/github.com/hi-hi-ray/
-  git clone git@github.com:hi-hi-ray/desafio-starwars.git
+  git clone git@github.com:hi-hi-ray/desafio-sw-go.git
 ```
 
 2- Instalando os pacotes.

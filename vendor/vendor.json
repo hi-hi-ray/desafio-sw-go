@@ -1,0 +1,31 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "/GcfmNbr8+DYLz+34mFIMHsAs0U=",
+			"path": "github.com/BurntSushi/toml",
+			"revision": "ea60c4def909bde529d41a7e0674e31eba751da3",
+			"revisionTime": "2020-10-17T18:33:28Z"
+		},
+		{
+			"checksumSHA1": "1Hm7Ij3YHAqBbxLCcGr4NKbI6e0=",
+			"path": "github.com/codegangsta/inject",
+			"revision": "33e0aa1cb7c019ccc3fbe049a8262a6403d30504",
+			"revisionTime": "2015-01-14T23:56:00Z"
+		},
+		{
+			"checksumSHA1": "AtI2wKvKTag/BASZPcdTd/KAjis=",
+			"path": "github.com/go-martini/martini",
+			"revision": "22fa46961aabd2665cf3f1343b146d20028f5071",
+			"revisionTime": "2017-01-21T21:58:54Z"
+		},
+		{
+			"checksumSHA1": "9DV7tc1E3QSBRc5V5CL9j5erHaQ=",
+			"path": "github.com/stretchr/testify",
+			"revision": "221dbe5ed46703ee255b1da0dec05086f5035f62",
+			"revisionTime": "2019-05-17T17:51:56Z"
+		}
+	],
+	"rootPath": "github.com/hi-hi-ray/desafio-sw-go"
+}

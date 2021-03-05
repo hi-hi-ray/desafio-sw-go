@@ -9,6 +9,7 @@ Tabela de conteúdos
    * [Solicitação da empresa](#solicitação-da-empresa)
    * [Solução](#solução)
       * [Como usar](#como-usar)
+        * [Ambiente Local](#ambiente-local)
       * [Testes](#testes)
       * [Roadmap](#roadmap)
       * [Tecnologias](#tecnologias)
@@ -51,3 +52,107 @@ Para possibilitar a equipe de front criar essa aplicação, queremos desenvolver
 -----
 
 ## Solução
+
+### Como usar
+
+#### Ambiente Local
+
+1- Baixando o repositório.
+
+Será necessário baixar o repositório dentro do caminho `GOPATH/src/github.com/hi-hi-ray/`, porém para certificar que o caminho existe, caso não rode `mkdir $GOPATH/src/github.com/hi-hi-ray/` para ser criado o caminho. De resto basta executar os comandos abaixo:
+
+``` 
+cd $GOPATH/src/github.com/hi-hi-ray/
+git clone git@github.com:hi-hi-ray/desafio-sw-go.git
+```
+
+2- Instalando os pacotes.
+
+Os pacotes que são necessários para subir o ambiente vão estar sendo executados via um script de bash que se encontra na pasta `deployment/get_requiments.sh`. Para instalar eles com facilidade, basta rodar os comandos a seguir:
+
+``` 
+chmod +x deployment/get_requirements.sh
+./deployment/get_requirements.sh
+```
+
+Se aparecer algum erro de `permission` tente colocar `sudo` na frente.
+
+3- Preenchendo o arquivo de configuração.
+
+Antes de rodar em qualquer ambiente é necessário copiar o arquivo `config.toml.example` e preencher os campos a seguir:
+
+Tags:
+* Database
+
+  ✩ server (Tipo do campo: Texto e é Obrigatório)
+
+  ✩ database (Tipo do campo: Texto e é  Obrigatório)
+
+  ✩ collection (Tipo do campo: Texto e é  Obrigatório)
+
+  ✩ port (Tipo do campo: Inteiro e é  Obrigatório)
+
+  ✩ username (Tipo do campo: Texto)
+
+  ✩ password (Tipo do campo: Texto)
+  
+  ✩ timeout (Tipo do campo: Inteiro e é  Obrigatório)
+
+* Servers
+  
+  Deve ser atualizada caso seja desejado mudar a porta da aplicação.
+
+* Swapi
+  
+  Deve ser atualizada com a informação da API consumida para buscar a quantidade de planetas.
+
+Para clonar esse arquivo com facilidade você pode usar o comando a seguir:
+
+```shell script
+cp ./api/config/config.toml.example ./api/config/config.toml
+```
+
+4- Executando a aplicação
+
+Para executar a aplicação é necessário estar na pasta `api`. para isso pode-se executar os comandos a seguir:
+
+``` 
+  cd api
+  go run main.go
+```
+
+Após a aplicação está no ar, você pode utilizar a documentação [Swagger](https://app.swaggerhub.com/apis/hi-hi-ray/DesafioStarWarsAPI-GO/1.0.0#/) para ver a utilização da api. 
+
+### Testes
+
+Para executar os testes existentes é aconselhável estar na pasta `api`, o comando que executa os testes seria:
+
+```shell script
+go test -v ./...
+```
+
+### Roadmap
+
+[x] Adicionar um planeta (com nome, clima e terreno)
+
+[x] Listar planetas
+
+[x] Buscar por nome
+
+[x] Buscar por ID
+
+[x] Remover planeta
+
+[x] Atualizar planeta usando um ID
+
+[] Adicionar vários planetas (com nome, clima e terreno)
+
+### Tecnologias:
+
+As ferramentas e tecnologias para construir essa aplicação.
+
+- [MinGW](https://sourceforge.net/projects/mingw-w64/)
+- [Golang v:1.12](https://golang.org/dl/)
+- [MongoDB v:4.0.9](https://www.mongodb.com/)
+- [GoLand](https://www.jetbrains.com/pt-br/go/)
+- [Govendor](https://github.com/kardianos/govendor)

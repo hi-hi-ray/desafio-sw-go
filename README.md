@@ -9,7 +9,7 @@ Tabela de conteúdos
    * [Solicitação da empresa](#solicitação-da-empresa)
    * [Solução](#solução)
       * [Como usar](#como-usar)
-        *[Ambiente Local](#ambiente-local)
+        * [Ambiente Local](#ambiente-local)
       * [Testes](#testes)
       * [Roadmap](#roadmap)
       * [Tecnologias](#tecnologias)

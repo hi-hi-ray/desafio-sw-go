@@ -62,17 +62,20 @@ Para possibilitar a equipe de front criar essa aplicação, queremos desenvolver
 Será necessário baixar o repositório dentro do caminho `GOPATH/src/github.com/hi-hi-ray/`, porém para certificar que o caminho existe, caso não rode `mkdir $GOPATH/src/github.com/hi-hi-ray/` para ser criado o caminho. De resto basta executar os comandos abaixo:
 
 ``` 
-  cd $GOPATH/src/github.com/hi-hi-ray/
-  git clone git@github.com:hi-hi-ray/desafio-sw-go.git
+cd $GOPATH/src/github.com/hi-hi-ray/
+git clone git@github.com:hi-hi-ray/desafio-sw-go.git
 ```
 
 2- Instalando os pacotes.
 
-Os pacotes que estão no arquivo `vendor/vendor.json` são obrigatórios para que o projeto funcione corretamente. Para instalar eles com facilidade, basta rodar o comando a seguir:
+Os pacotes que são necessários para subir o ambiente vão estar sendo executados via um script de bash que se encontra na pasta `deployment/get_requiments.sh`. Para instalar eles com facilidade, basta rodar os comandos a seguir:
 
 ``` 
-  govendor sync
+chmod +x deployment/get_requirements.sh
+./deployment/get_requirements.sh
 ```
+
+Se aparecer algum erro de `permission` tente colocar `sudo` na frente.
 
 3- Preenchendo o arquivo de configuração.
 

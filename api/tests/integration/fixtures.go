@@ -1,7 +1,8 @@
-package integration
+package tests
 
 import (
 	"github.com/hi-hi-ray/desafio-sw-go/api/models"
+	"go.mongodb.org/mongo-driver/bson/primitive"
 )
 
 var residents = []string{
@@ -40,4 +41,12 @@ var Result = models.Results{
 	Created:        "2014-12-09T13:50:49.641000Z",
 	Edited:         "2014-12-20T20:58:18.411000Z",
 	URL:            "http://swapi.dev/api/planets/1/",
+}
+
+var MockPlanet = models.Planet{
+	ID:                  primitive.ObjectID{},
+	Name:                "Teste",
+	Climate:             "Teste",
+	Terrain:             "Teste",
+	AmountOfAppearances: 6,
 }

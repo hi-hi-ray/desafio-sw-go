@@ -1,5 +1,10 @@
 #!/bin/sh
 
+
+echo "Reseting the GO111MODULE to auto"
+
+export GO111MODULE="auto"
+
 echo "Installing required packages"
 
 go get -v github.com/BurntSushi/toml

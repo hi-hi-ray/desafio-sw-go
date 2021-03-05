@@ -59,7 +59,7 @@ Para possibilitar a equipe de front criar essa aplicação, queremos desenvolver
 
 1- Baixando o repositório.
 
-Será necessário baixar o repositório dentro do caminho `GOPATH/src/github.com/hi-hi-ray/`, porem para certificar que o caminho existe, caso não rode `mkdir $GOPATH/src/github.com/hi-hi-ray/` para ser criado o caminho. De resto basta executar os comandos abaixo:
+Será necessário baixar o repositório dentro do caminho `GOPATH/src/github.com/hi-hi-ray/`, porém para certificar que o caminho existe, caso não rode `mkdir $GOPATH/src/github.com/hi-hi-ray/` para ser criado o caminho. De resto basta executar os comandos abaixo:
 
 ``` 
   cd $GOPATH/src/github.com/hi-hi-ray/
@@ -71,7 +71,7 @@ Será necessário baixar o repositório dentro do caminho `GOPATH/src/github.com
 Os pacotes que estão no arquivo `vendor/vendor.json` são obrigatórios para que o projeto funcione corretamente. Para instalar eles com facilidade, basta rodar o comando a seguir:
 
 ``` 
-  govendor install vendor/vendor.json
+  govendor sync
 ```
 
 3- Preenchendo o arquivo de configuração.
@@ -81,19 +81,19 @@ Antes de rodar em qualquer ambiente é necessário copiar o arquivo `config.toml
 Tags:
 * Database
 
-  ✩ server (Tipo do campo: Texto e Obrigatório)
+  ✩ server (Tipo do campo: Texto e é Obrigatório)
 
-  ✩ database (Tipo do campo: Texto e Obrigatório)
+  ✩ database (Tipo do campo: Texto e é  Obrigatório)
 
-  ✩ collection (Tipo do campo: Texto e Obrigatório)
+  ✩ collection (Tipo do campo: Texto e é  Obrigatório)
 
-  ✩ port (Tipo do campo: Inteiro e Obrigatório)
+  ✩ port (Tipo do campo: Inteiro e é  Obrigatório)
 
   ✩ username (Tipo do campo: Texto)
 
   ✩ password (Tipo do campo: Texto)
   
-  ✩ timeout (Tipo do campo: Inteiro e Obrigatório)
+  ✩ timeout (Tipo do campo: Inteiro e é  Obrigatório)
 
 * Servers
   

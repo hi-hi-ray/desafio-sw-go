@@ -11,11 +11,11 @@ import (
 
 func PlanetModelValidator(planet *models.Planet) (error, bool) {
 	log.Println("[PLANET MODEL VALIDATOR] Checking body of the requisition.")
-	if planet.Name != "" || planet.Terrain != "" || planet.Climate != "" {
-		return nil, true
+	if (planet.Name == "") || (planet.Terrain == "") || (planet.Climate == "") {
+		err := errors.Create(errors.PlanetMandatoryFields)
+		return err, false
 	}
-	err := errors.Create(errors.PlanetMandatoryFields)
-	return err, false
+	return nil, true
 }
 
 func PlanetExistsValidator(planet *models.Planet) bool {

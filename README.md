@@ -59,7 +59,7 @@ Para possibilitar a equipe de front criar essa aplicação, queremos desenvolver
 
 1- Baixando o repositório.
 
-Será necessário baixar o repositório dentro do caminho `GOPATH/src/github.com/hi-hi-ray/`, porém para certificar que o caminho existe, caso não rode `mkdir $GOPATH/src/github.com/hi-hi-ray/` para ser criado o caminho. De resto basta executar os comandos abaixo:
+Será necessário baixar o repositório dentro do caminho `GOPATH/src/github.com/hi-hi-ray/`, porém é necessario certificar que o caminho existe, caso ele não exista, execute `mkdir $GOPATH/src/github.com/hi-hi-ray/` para ser criado o caminho. De resto basta executar os comandos abaixo:
 
 ``` 
 cd $GOPATH/src/github.com/hi-hi-ray/
@@ -146,6 +146,15 @@ go test -v ./...
 [x] Atualizar planeta usando um ID
 
 [] Adicionar vários planetas (com nome, clima e terreno)
+
+[] Refatorar a Estrutura e melhorar o código
+
+[] Adicionar Dockerfile
+
+[] Atualizar as libs e a versão do Go
+
+[] Adicionar um benchmark de consumo de máquina
+
 
 ### Tecnologias:
 
